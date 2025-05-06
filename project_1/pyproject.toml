@@ -1,0 +1,16 @@
+[build-system]
+requires = ["scikit-build-core[pyproject]>=0.7.0", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "mymodule"
+version = "0.1.0"
+description = "Un exemple de binding C++ avec pybind11"
+authors = [{name = "Toi"}]
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.scikit-build]
+cmake.version = ">=3.18"
+build.verbose = true
+sdist.include = ["mymodule/*", "CMakeLists.txt"]
